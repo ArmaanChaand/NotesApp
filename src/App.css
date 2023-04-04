@@ -1,38 +1,200 @@
-.App {
-  text-align: center;
+@import './tailwind.css'; 
+body{
+  @apply w-screen h-screen
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+div#root{
+  @apply w-full h-full
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+main.MAIN{
+  @apply w-full h-full bg-black text-white font-michroma flex flex-col items-center justify-between text-bright-blue p-5
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.top-bar{
+  @apply w-full text-center mb-5 flex flex-col items-center justify-center
 }
-
-.App-link {
-  color: #61dafb;
+.top-bar > h1{
+  @apply text-4xl font-black border-b-2 border-bright-blue px-5 pb-3
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.top-bar > h1 > span{
+  @apply mx-4
+}
+.MAIN div.body{
+  @apply h-full w-full flex flex-col sm:flex-row items-start justify-between overflow-hidden
+}
+div.body > nav.nav{
+  @apply w-full sm:w-44 sm:h-full h-12 border-b-2 sm:border-b-0 sm:border-r-2 border-slate-800 
+  flex flex-row sm:flex-col items-center justify-start
+}
+nav.nav a.BUTTON{
+  @apply w-full  sm:w-[101%] h-[108%] sm:h-12 flex justify-center sm:justify-start items-center font-bold 
+  capitalize sm:border-r-2 border-transparent sm:mb-2 mr-2 sm:mr-0 border-b-2 sm:border-b-0
+}
+nav.nav a.BUTTON:last-child{
+  @apply mb-0 mr-0
+}
+nav.nav a.BUTTON span{
+  @apply ml-3 text-base hidden sm:inline-block
+}
+nav.nav a.BUTTON svg{
+  @apply text-lg
+}
+nav.nav a.BUTTON:hover{
+  @apply border-bright-blue
+}
+nav.nav a.BUTTON.ACTIVE{
+  @apply text-bright-orange border-bright-orange
+}
+section.content{
+  @apply w-full sm:w-4/5 h-full pl-0 sm:pl-3 pt-2 overflow-y-auto
+}
+.START{
+  @apply w-full h-full flex flex-col justify-start items-start overflow-hidden
+}
+h2.page-heading{
+  @apply text-lg capitalize font-bold mb-5 relative
+}
+h2.page-heading::before{
+  @apply absolute [content:""] -bottom-2 left-0 w-2/5 h-0.5 bg-bright-orange
+}
+.stats-boxes{
+  @apply flex flex-row justify-between items-center flex-wrap w-full
+}
+.stats-boxes .stats-box {
+  @apply w-1/3 h-32 flex flex-col justify-evenly items-center border-r-2 border-bright-blue
+}
+.stats-boxes .stats-box:last-child {
+  @apply border-transparent
+}
+.stats-boxes .stats-box > p.num{
+  @apply text-bright-orange font-bold text-2xl
+}
+.stats-boxes .stats-box > p.text{
+  @apply font-bold text-xs sm:text-base
+}
+.START .featured{
+  @apply w-full h-full mt-5 flex flex-col items-start justify-start  overflow-hidden
+}
+.featured h3{
+  @apply text-xs font-normal text-bright-orange uppercase [word-spacing:8px] relative mb-3
+}
+.featured h3::before{
+  @apply absolute [content:""]  w-1/4 h-0.5 bg-bright-orange -bottom-0.5 left-0 
+}
+.featured h2{
+  @apply text-lg font-bold mb-2
+}
+.featured p {
+  @apply text-base overflow-y-auto  overflow-x-hidden
+}
+.NEWNOTE{
+  @apply w-full h-full flex flex-col items-start justify-start 
+}
+.NEWNOTE form.create-note{
+  @apply w-full h-full flex flex-col justify-start
+}
+form.create-note label{
+  @apply text-base font-semibold 
+}
+form.create-note input, form.create-note textarea, form.login input{
+  @apply p-2 bg-slate-800 border-l-2 border-bright-blue  outline-0 mt-2 mb-5
+}
+form.create-note textarea{
+  @apply resize-none h-full
+}
+form.create-note button{
+  @apply py-3 px-5 bg-bright-orange  self-end text-white text-lg font-bold rounded border-2 
+  border-bright-orange transition
+} 
+form.create-note button:hover{
+  @apply bg-transparent text-bright-orange
+}
+.NOTES {
+  @apply w-full h-full flex flex-col items-start justify-start
+}
+.NOTES .note-links{
+  @apply w-full flex flex-col items-start justify-start overflow-y-auto
+}
+.note-links > a {
+  @apply w-full px-2 py-5 mb-3 block bg-slate-800 text-white rounded-sm font-normal overflow-hidden
+}
+.note-links > a:hover {
+  @apply bg-bright-orange text-white
+}
+.NOTE .goBack{
+  @apply w-full px-5 py-2 text-start text-white font-bold text-lg bg-bright-orange rounded-sm mb-5 transition
+  border-2 border-bright-orange
+}
+.NOTE .goBack:hover{
+  @apply text-bright-orange bg-transparent
+}
+.NOTE .note-section, .Page404, .LOGIN{
+ @apply w-full h-full flex flex-col items-start justify-start overflow-x-hidden
+}
+.NOTE .note-section{
+  @apply overflow-y-auto
+}
+.Page404 > h1{
+  @apply self-center text-2xl font-bold
+}
+.Page404 a{
+  @apply self-center text-bright-orange pb-3 mt-3 underline
+}
+.LOGIN {
+  @apply items-center justify-between overflow-hidden sm:h-full
+}
+.LOGIN.REGISTER{
+  @apply h-auto
+}
+.LOGIN h2.page-heading{
+  @apply text-3xl
+}
+.LOGIN form.login{
+  @apply flex w-3/5 flex-col items-center justify-between
+}
+form.login input{
+  @apply w-full py-3
+}
+form.login label{
+  @apply w-full
+}
+form.login button{
+  @apply w-3/5 py-3 bg-bright-orange text-white text-lg font-semibold rounded-sm mt-5
+}
+form.login button:hover{
+  @apply  bg-bright-orange/90
+}
+.LOGIN p.msg {
+  @apply text-base mt-3 text-center 
+}
+.LOGIN p.msg a {
+  @apply ml-3 text-bright-orange
+}
+.LOGIN p.msg a:hover{
+  @apply underline
+}
+form.login.register{
+  @apply w-full md:w-4/5
+}
+div.login.register {
+  @apply lg:w-4/5 w-full flex flex-col w-full
+}
+div.login.register div.register{
+  @apply flex flex-col sm:flex-row justify-between items-center w-full 
+}
+div.login.register div.register div{
+  @apply flex flex-col justify-start items-start
+}
+div.login.register div.register div:first-child{
+  @apply mr-2
+}
+div.START.Unauth{
+  @apply flex flex-col items-center justify-start
+}
+div.START.Unauth > h2{
+  @apply text-2xl font-semibold mt-3
+}
+div.START.Unauth > a.button{
+  @apply w-full md:w-4/5 h-16 text-white bg-slate-800 grid place-items-center text-lg font-semibold rounded my-5
+}
+div.START.Unauth > a.button:hover{
+  @apply bg-bright-orange 
 }
