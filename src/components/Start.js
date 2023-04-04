@@ -4,7 +4,7 @@ import { Start2 } from "./StartUnauth"
 function Start({user}){
     const [is_Authenticated, setIsAuthenticated ] = useState(false)
     useEffect(()=>{
-        user.is_Authenticated && setIsAuthenticated(true)
+        user && user.is_Authenticated && setIsAuthenticated(true)
     }, [user])
     return(
         <>
