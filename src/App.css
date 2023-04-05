@@ -139,7 +139,7 @@ form.create-note button:hover{
   @apply self-center text-bright-orange pb-3 mt-3 underline
 }
 .LOGIN {
-  @apply items-center justify-between overflow-hidden sm:h-full
+  @apply items-center justify-between overflow-hidden sm:h-full 
 }
 .LOGIN.REGISTER{
   @apply h-auto
@@ -148,7 +148,7 @@ form.create-note button:hover{
   @apply text-3xl
 }
 .LOGIN form.login{
-  @apply flex w-3/5 flex-col items-center justify-between
+  @apply flex w-4/5 sm:w-3/5 flex-col items-center justify-between
 }
 form.login input{
   @apply w-full py-3
